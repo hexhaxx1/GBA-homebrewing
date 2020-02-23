@@ -37,6 +37,17 @@ void plotPixel(s32 a_x, s32 a_y, u16 a_color)
 	SCREENBUFFER[a_y * SCREEN_W + a_x] = a_color;
 }
 
+void drawRect(s32 a_left, s32 a_top, s32 a_width, s32 a_height, u16 a_color)
+{
+	for (s32 y = 0; y < a_height; ++y)
+	{
+		for (s32 x = 0; x < a_top; ++x)
+		{
+			plotPixel(a_left + x, a_top + y, a_color);
+		}
+	}
+}
+
 int main()
 {
 	//set GBA rendering context to MODE 3 Bitmap Rendering
